@@ -7,9 +7,9 @@
 
 ![DeckStats Frontend](Deckstats_Frontend/public/images/deckstatsLayout.png)
 
-# Deck Stats 2.0
+# Deck Stats 2.0 (Work in Progress)
 
-Detta projekt är en vidareutveckling av mitt tidigare Deck Stats-projekt där statistiken istället lagras i en databas och exponeras via ett API.
+Detta projekt är en vidareutveckling av mitt tidigare Deck Stats-projekt där statistiken nu lagras i en databas och exponeras via ett API.
 
 Projektet började som ett konsolprogram byggt i C# och SQLite för att uppfylla en skoluppgift där applikationen skulle skapa och hantera en relationsdatabas. Programmet låter användare registrera konton, skapa lekar och registrera matchresultat.
 
@@ -24,18 +24,6 @@ Senare utvecklades projektet vidare med ett REST API i C#. En React-frontend på
 * beräkna matcher, vinster, förluster och winrate
 * REST API för att exponera data
 
-## Databasstruktur
-
-Relationer i databasen:
-```
-User
- └── Deck
-       └── Match statistics
-```
-Exempel på relation:
-```
-User (1) → (many) Decks
-```
 
 ## Arkitektur
 ```
@@ -66,18 +54,49 @@ Via konsolen kan man:
 
 ### Exempel
 Skapa användare
+
 Email: user@example.com
 
 Password: ********
 
 Skapa lek
+
 Deck name: Testlek
 
 Registrera match
 Result: Win
+
+## Köra projektet
+
+Backend och frontend körs separat.
+
+### Starta backend
+
+Navigera till backend-projektet och kör:
+
+```
+dotnet run
+```
+
+### Starta frontend
+
+Navigera till frontend-mappen och kör:
+```
+npm install
+npm run dev
+```
 
 ## Status
 
 Detta projekt är fortfarande under utveckling.
 
 Backend och databaslogik är implementerade och kan användas via konsolapplikationen. React-frontend är påbörjad och innehåller i nuläget inloggning, men konto måste först skapas via konsolversionen.
+
+### Frontend
+
+- [x] login
+- [ ] skapa konto via frontend
+- [ ] skapa/visa lekar
+- [ ] registrera matchresultat
+- [ ] visa statistik
+
